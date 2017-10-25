@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>验证汉字</title>
+  <script>
+    //[\u4e00-\u9fa5]
+    console.log(/[\u4e00-\u9fa5]/.test("a"));
+    console.log(/[\u4e00-\u9fa5]/.test("aabc"));
+    console.log(/[\u4e00-\u9fa5]/.test("ABC"));
+    console.log(/[\u4e00-\u9fa5]/.test("我"));
+    console.log(/[\u4e00-\u9fa5]/.test("我们"));
+    console.log(/[\u4e00-\u9fa5]/.test("@123我们"));
+    console.log(/[\u4e00-\u9fa5]/.test("123"));
+    
+    console.log('*********汉字出现的次数***********');
+    console.log(/[\u4e00-\u9fa5]{3}/.test("@123我们"));
+    console.log(/[\u4e00-\u9fa5]{3}/.test("@123我们中"));
+    console.log(/[\u4e00-\u9fa5]{3}/.test("@123我们中华"));
+    console.log(/^[\u4e00-\u9fa5]{3}$/.test("@123我们中华"));
+    console.log(/^[\u4e00-\u9fa5]{3}$/.test("我们中华"));
+    console.log(/^[\u4e00-\u9fa5]{3}$/.test("我们中"));
+  </script>
+</head>
+<body>
+
+</body>
+</html>

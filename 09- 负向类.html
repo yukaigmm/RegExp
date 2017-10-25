@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>负向类</title>
+  <script>
+    // [^]  只要不是其中的任何一个字符即可
+    console.log(/[a-d]/.test('a'));
+    console.log(/[a-d]/.test('A'));
+    console.log(/[^a-d]/.test('a'));
+    console.log(/[^a-d]/.test('a '));
+    console.log(/[^a-d]/.test('ab%'));
+    console.log(/[^a-d]/.test(' '));
+    console.log(/[^a-d]/.test('%'));
+    console.log(/[^a-d]/.test(''));  // 得有字符，如果什么都没有的话，则是false
+    console.log(/[^a-d]/.test('A'));
+  </script>
+</head>
+<body>
+
+</body>
+</html>

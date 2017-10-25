@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>量词的使用</title>
+  <script>
+    // *  >=0   + >=1    ? 0|1
+    // ^$ 一块使用的时候，表示严格匹配
+    console.log('*******表示出现0到多次*****');
+    console.log(/^\d*$/.test('abc'));
+    console.log(/^\d*$/.test('abc0')); // 只能是数字出现0到多次，不能有其它符号  false
+    console.log(/^\d*$/.test('')); //true
+    console.log(/^\d*$/.test(' '));
+    console.log(/^\d*$/.test(' '));
+
+
+    console.log('*******+表示出现1到多次*****');
+    console.log(/^\d+$/.test('abc'));
+    console.log(/^\d+$/.test('abc0'));
+    console.log(/^\d+$/.test(''));
+    console.log(/^\d+$/.test(' '));
+    console.log(/^\d+$/.test(' '));
+    console.log(/^\d+$/.test(' 12356 ')); //
+    console.log(/^\d+$/.test('12')); //
+    console.log(/^\d+$/.test('12356')); // 只要是数字，出现了1到多次都可以
+    console.log(/^\d+$/.test('123 56')); // 不能出现其它字符
+
+    console.log('*******?表示出现1到多次*****');
+    console.log(/^\d?$/.test('abc'));
+    console.log(/^\d?$/.test('abc0'));
+    console.log(/^\d?$/.test(''));
+    console.log(/^\d?$/.test(' '));
+    console.log(/^\d?$/.test(' '));
+    console.log(/^\d?$/.test(' 12356 '));
+    console.log(/^\d?$/.test('1'));
+    console.log(/^\d?$/.test('12')); // 虽然是数字，但是多了也不行
+
+    console.log('********{3}一个数字的时候，表示前面出现的次数*************');
+    console.log(/^\d{3}$/.test('abc'));
+    console.log(/^\d{3}$/.test('abc0'));
+    console.log(/^\d{3}$/.test(''));
+    console.log(/^\d{3}$/.test(' '));
+    console.log(/^\d{3}$/.test(' '));
+    console.log(/^\d{3}$/.test(' 12 '));
+    console.log(/^\d{3}$/.test('123'));
+    console.log(/^\d{3}$/.test('1234')); //
+    console.log(/^\d{3}$/.test('12356')); //  严格匹配下，多了不行，少了也不行
+    console.log(/^\d{3}$/.test('12'));
+
+    console.log('********{3,}一个数字的时候，表示前面出现的次数*************');
+    console.log(/^\d{3,}$/.test('abc'));
+    console.log(/^\d{3,}$/.test('abc0'));
+    console.log(/^\d{3,}$/.test(''));
+    console.log(/^\d{3,}$/.test(' '));
+    console.log(/^\d{3,}$/.test(' '));
+    console.log(/^\d{3,}$/.test('12'));
+    console.log(/^\d{3,}$/.test('123'));
+    console.log(/^\d{3,}$/.test('1234')); // 3到多次，必须只能是数字，不能有其它字符
+    console.log(/^\d{3,}$/.test('12356'));
+    console.log(/^\d{3,}$/.test('12356 ')); // 不能出现其它字符
+
+    console.log('********{3,6}一个数字的时候，表示前面出现的次数*************');
+    console.log(/^\d{3,6}$/.test('abc'));
+    console.log(/^\d{3,6}$/.test('abc0'));
+    console.log(/^\d{3,6}$/.test(''));
+    console.log(/^\d{3,6}$/.test(' '));
+    console.log(/^\d{3,6}$/.test(' '));
+    console.log(/^\d{3,6}$/.test('12'));
+    console.log(/^\d{3,6}$/.test('123'));
+    console.log(/^\d{3,6}$/.test('1234')); // 至少出现3次，多了也是可以的
+    console.log(/^\d{3,6}$/.test('12356'));
+    console.log(/^\d{3,6}$/.test('123567'));
+    console.log(/^\d{3,6}$/.test('12356789')); // 多一个也不行，只能是3--6个
+  </script>
+</head>
+<body>
+
+</body>
+</html>

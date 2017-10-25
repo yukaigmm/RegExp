@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>阻止默认行为</title>
+  <script>
+    window.onload = function(){
+        var link = document.getElementById("link");
+        link.onclick = function (e){
+          e = e || window.event;
+               alert(123);
+//          return false;  // 是没有兼容性的
+//          e.preventDefault();  // prevent 阻止 防止   default   高级浏览器支持的方式
+          e.returnValue = false;  // IE8支持的方式
+        }
+    }
+  </script>
+</head>
+<body>
+<a href="http://www.baidu.com" id="link">百度</a>
+</body>
+</html>

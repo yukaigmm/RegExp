@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<style type="text/css">
+  body {
+    background: #ccc;
+  }
+  
+  label {
+    width: 40px;
+    display: inline-block;
+  }
+  
+  span {
+    color: red;
+  }
+  
+  .container {
+    margin: 100px auto;
+    width: 400px;
+    padding: 50px;
+    line-height: 40px;
+    border: 1px solid #999;
+    background: #efefef;
+  }
+  
+  span {
+    margin-left: 30px;
+    font-size: 12px;
+  }
+  
+  .wrong {
+    color: red
+  }
+  
+  .right {
+    color: green;
+  }
+  
+  .defau {
+    width: 200px;
+    height: 20px;
+  }
+  
+  .de1 {
+    background-position: 0 -20px;
+  }
+</style>
+<body>
+<div class="container">
+  <label>邮箱</label><input type="text" id="txt"><span></span><br/>
+</div>
+<script>
+    // @.com   Liudahua___001@sina.com      .cn  .com. cn .net  .gov .edu  .china
+  //1.获得要操作的对象
+  var txt = document.getElementById("txt");
+  //2.给事件源注册事件
+  txt.onblur = function (){
+         var reg = /^\w+[@]\w+\.\w+(\.\w+)?$/;
+         if(reg.test(txt.value)){
+           alert("邮箱正确");
+         }else {
+           alert("邮箱错误");
+         }
+//         alert("小明说:\"今天天气不错啊\"")
+  }
+</script>
+</body>
+</html>

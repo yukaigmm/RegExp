@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>范围类</title>
+  <script>
+    //  - 表示一个连续的范围区间
+    //  a-d  abcdefghijklmn    a-d  g-l
+    
+    console.log(/[a-d]/.test('m'));
+    console.log(/[a-dg-l]/.test('m'));
+    console.log(/[a-dg-l]/.test('k'));
+    console.log(/[a-dg-l]/.test('c'));
+    console.log(/[a-dg-l]/.test('e'));
+    console.log(/[a-dg-l]/.test('f'));
+  </script>
+</head>
+<body>
+
+</body>
+</html>

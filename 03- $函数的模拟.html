@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>模拟$函数</title>
+  <script>
+    //
+    window.onload = function(){
+        var btn = document.getElementById("btn");
+        var div = document.getElementsByClassName('box');
+        var p = document.getElementsByTagName("p");
+    }
+    
+    $(function(){
+      var btn = $('#btn');
+      var div = $(".box");
+      var p = $('p');
+    });
+    
+    function $(str){
+      if(typeof str =='function') {
+        window.onload = str;
+        window.onload = function(){
+          var btn = $('#btn');
+          var div = $(".box");
+          var p = $('p');
+        };
+      }
+    }
+    
+    function $(str){
+      if(typeof str =='function'){
+        window.onload = str;
+      }else if(str.charAt(0)=='#'){
+        return  document.getElementById(str.slice(1));
+      }else if(str.charAt(0) == '.'){
+        return  document.getElementsByClassName(str.slice(1));
+      }else {
+       return   document.getElementsByTagName(str);
+      }
+    }
+  </script>
+</head>
+<body>
+<input type="button" value="button" id="btn">
+<div class="box"></div>
+<p></p>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<style type="text/css">
+  body {
+    background: #ccc;
+  }
+  
+  label {
+    width: 40px;
+    display: inline-block;
+  }
+  
+  span {
+    color: red;
+  }
+  
+  .container {
+    margin: 100px auto;
+    width: 400px;
+    padding: 50px;
+    line-height: 40px;
+    border: 1px solid #999;
+    background: #efefef;
+  }
+  
+  span {
+    margin-left: 30px;
+    font-size: 12px;
+  }
+  
+  .wrong {
+    color: red;
+  }
+  
+  .right {
+    color: green;
+  }
+  
+  .defau {
+    width: 200px;
+    height: 20px;
+  }
+  
+  .de1 {
+    background-position: 0 -20px;
+  }
+</style>
+<body>
+<div class="container">
+  <label>QQ</label><input type="text" id="txt1"><span></span><br/>
+  <label>手机</label><input type="text" id="txt2"><span></span><br/>
+  <label>邮箱</label><input type="text" id="txt3"><span></span><br/>
+  <label>座机</label><input type="text" id="txt4"><span></span><br/>
+  <label>姓名</label><input type="text" id="txt5"><span></span><br/>
+</div>
+<script>
+  //  qq号  5-12          10000   10001
+  var reg = /^[1-9]\d{4,11}$/;
+  
+  var regQQ = document.getElementById("txt1");
+  var regTel = document.getElementById("txt2");
+  
+  regQQ.onblur = function (){
+    checkReg(regQQ,/^[1-9]\d{4,11}$/);
+  }
+  
+  
+  
+  function checkReg(obj,reg){
+    if(reg.test(obj.value)){
+      obj.nextElementSibling.innerHTML = "输入正确";
+    }else {
+      obj.nextElementSibling.innerHTML = "输入不正确";
+    }
+  }
+</script>
+</body>
+</html>

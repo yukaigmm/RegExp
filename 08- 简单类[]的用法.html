@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>[]的用法 </title>
+  <script>
+    //[]   表达获取中括号中的任意一个字符
+    console.log(/[\d]/.test('abc1'));
+    console.log(/[1234]/.test('abc1'));
+    console.log(/[1234]/.test('abc9'));
+    console.log(/[1234]/.test('a0bc9'));
+    console.log(/[1234]/.test('a02bc9'));
+    
+    console.log('*******[\w]**********');
+    console.log(/[\w]/.test('abc'));
+    console.log(/[abcdefghigkl]/.test('123'));
+    console.log(/[abcdefghigkl]/.test('123p'));
+    console.log(/[abcdefghigkl]/.test('123i'));
+    console.log(/[a-l]/.test('123i'));
+    console.log(/[a-l]/.test('123d'));
+    console.log(/[a-l]/.test('123s'));
+    
+    console.log('*******a-z***********');
+    console.log(/[a-z]/.test('afad'));
+    console.log(/[a-z]/.test('123'));
+    console.log(/[a-z]/.test(' '));
+    console.log(/[a-z]/.test(' $%^'));
+    
+    console.log('*******[1-4]************');
+    console.log(/[1-4]/.test('1'));
+    console.log(/[1-4]/.test('2'));
+    console.log(/[1-4]/.test('3'));
+    console.log(/[1-4]/.test('4'));
+    console.log(/[1-4]/.test('5'));
+    console.log(/[1-4]/.test('6'));
+    
+    console.log('*****A-Z**********');
+    console.log(/[A-Z]/.test('a'));
+    console.log(/[A-Z]/.test('A'));
+    
+  </script>
+</head>
+<body>
+
+</body>
+</html>

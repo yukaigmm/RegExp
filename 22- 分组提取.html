@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>分组提取</title>
+  <script>
+//       var str = "123123@xx.com";
+//      var arr = str.match(/(\w+)[@](\w+)\.(\w+)(\.\w+)?/);
+//
+//        console.log(arr);
+//        console.log(RegExp.$1);
+//        console.log(RegExp.$2);
+//        console.log(RegExp.$3);
+//        console.log(RegExp.$4);
+//        console.log(RegExp.$5);
+//        console.log(RegExp.$6);
+        // $1 是匹配到分组中的第一项，后面的依次类推，如果没有的话，则默认是空字符串
+      // ()除了能够提高优先级之外，还可以用于分组
+
+       var str = "5=a, 6=b, 7=c"; // str = 'a=5,b=6,c=7';
+//  $1表示匹配到的第一项， $2表示匹配到的第二项
+        str = str.replace(/(\d)=(\w)/g,"$2=$1");
+        console.log(str);
+       //console.log(str);
+  </script>
+</head>
+<body>
+
+</body>
+</html>

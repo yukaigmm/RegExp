@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>预定义类</title>
+  <script>
+    /**
+     *
+      .	[^\n\r]	除了换行和回车之外的任意字符
+
+     \d	[0-9]		数字字符
+     \D	[^0-9]	非数字字符
+
+     \s	[\f\r\n\t\v]	不可见字符    空白字符   space
+     \S	[^\f\r\n\t\v]	可见字符
+
+     \w	[a-zA-Z0-9_]		单词字符(所有的字母数字和_)  所有的大小写字母数字_
+     \W	[^a-zA-Z0-9_]	非单词字符
+
+     */
+    console.log('**********除了换行和回车之外的任意字符******************');
+    console.log(/./.test('abd123'));
+    console.log(/./.test('' +
+      ''));
+    console.log('***********\d任意一个数字*******************');
+    console.log(/\d/.test('123'));  // 只要有一个符合要求，就返回true,一个都没有的话，则返回false
+    console.log(/\d/.test('abc'));
+    console.log(/\d/.test('!@#$'));
+    console.log(/\d/.test('!@#$0'));
+
+    console.log('***********\D非数字*******************');
+    console.log(/\D/.test('123'));  //
+    console.log(/\D/.test('abc'));
+    console.log(/\D/.test('!@#$'));
+    console.log(/\D/.test('!@#$0')); // 只要有一个不是数字，就会返回true
+    
+    console.log('*********\s 不可见字符************');
+    console.log(/\s/.test(' '));
+    console.log(/\s/.test(' abc'));
+    console.log(/\s/.test('123abc'));
+    console.log(/\s/.test('12$%3a$%3abc'));
+    console.log(/\s/.test('12$%3  a$%3abc'));
+
+    console.log('*********\S 可见字符************');
+    console.log(/\S/.test(' '));
+    console.log(/\S/.test(' abc'));
+    console.log(/\S/.test('123abc'));
+    console.log(/\S/.test('12$%3a$%3abc'));
+    console.log(/\S/.test('12$%3  a$%3abc'));
+    
+    console.log("***********\w 所有的大小写字母数字_***********");
+    console.log(/\w/.test(''));
+    console.log(/\w/.test(' '));
+    console.log(/\w/.test(' abc'));
+    console.log(/\w/.test(' _'));
+    console.log(/\w/.test(' $'));
+    console.log(/\w/.test(' A '));
+    console.log(/\w/.test(' &*'));
+
+    console.log("***********\W 非单词字符除了大小写字母数字及_之外的任意字符***********");
+    console.log(/\W/.test(''));
+    console.log(/\W/.test(' '));
+    console.log(/\W/.test(' abc'));
+    console.log(/\W/.test(' _'));
+    console.log(/\W/.test(' $'));
+    console.log(/\W/.test(' A '));
+    console.log(/\W/.test(' &*'));
+//    if(/\d/.test(input.value)){
+//
+//    }else {
+//
+//    }
+    
+
+//    x*ABC+ Y*DDD + Z*EE       X+Y+Z =14
+  </script>
+</head>
+<body>
+<input type="text">
+</body>
+</html>

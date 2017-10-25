@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        canvas{
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="800" height="500">你的浏览器不支持canvas</canvas>
+    <script>
+       //得到画面
+        var cancas =document.getElementById('canvas');
+        //得到上下文对象
+        var ctx = canvas.getContext('2d');
+
+        var ballArray =[];//创建一个数组  var ballArray = new Array();
+
+        function Ball(x,y){
+            this.x=x;
+            this.y=y;
+            this.color = 'blue';
+            this.r = 30;//写死了
+
+            this.dX = Math.PI *10-5;
+            this.dY = Math.PI*10-5;
+            this.dR = Math.PI+0.3;
+
+                //应该是下面的写法
+            //this.dX = Math.random() *10-5;
+            //this.dY = Math.random()*10-5;
+            //this.dR = Math.random()+0.3;
+        }
+        Ball.prototype = {
+            //更新
+            update:function(){
+                this.x+=this.dX;
+                this.y+=this.dY;
+                this.r+=this.dR;
+                if(this.r<=0){
+                    this.r=0.1;
+                    ballArray= _.without(ballArray,this);
+                }
+            }
+            //渲染
+            ,render:function(){
+                ctx.beginPath();
+                ctx.arc(this.x,this.y,this.r,0,Math.PI*2,true);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.closePath;
+            }
+        }
+
+        setInterval(function(){
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+            for(var i=0;i<ballArray.length;i++){
+                ballArray[i].update();
+                if(ballArray[i]){ //如果存在的话
+                    ballArray[i].render();
+                }
+            }
+        },20)
+
+        //添加监听
+        canvas.addEventListener('mousemove',function(event){
+            ballArray.push(new Ball(event.offsetX,event.offsetY));
+        })
+    </script>
+</body>
+</html>

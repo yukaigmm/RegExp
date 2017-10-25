@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>严格匹配的使用</title>
+  <script>
+//    console.log(/^\d$/);
+    console.log(/abc/.test("abcdef"));
+    console.log(/^abc$/.test("abcdef"));
+    console.log(/^abc$/.test("abc"));
+    console.log(/^abc{2}$/.test("abcabc"));
+    console.log(/^abc{2}$/.test("abcc"));
+    console.log(/^(abc){2}$/.test("abcc"));
+    console.log(/^(abc){2}$/.test("abcabc"));
+  </script>
+</head>
+<body>
+
+</body>
+</html>

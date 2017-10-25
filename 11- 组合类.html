@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>组合类</title>
+  <script>
+    // 组合类，就是把预定义类或是自定义类组合在一块的验证规则
+    
+    console.log('******组合类\d\s 得有数字和非空字符 得按顺序');
+    console.log(/\d\s/.test('20'));
+    console.log(/\d\s/.test(' '));
+    console.log(/\d\s/.test(' 20 '));
+    console.log(/\d\s/.test(' 5'));
+    console.log(/[\d\s]/.test(' 5'));
+    console.log(/[\d\s]/.test('5 '));
+    console.log(/[\d\s]/.test('5'));
+    console.log(/[\d\s]/.test(' '));
+    
+    console.log('********只想要大小写字母的组合***********');
+    console.log(/[a-zA-Z]/.test('a'));
+    console.log(/[a-zA-Z]/.test('A'));
+    console.log(/[a-zA-Z]/.test('123'));
+    console.log(/[a-zA-Z]/.test('  '));
+    console.log(/[a-zA-Z%]/.test(' % '));
+    console.log(/[a-zA-Zhei]/.test(' h '));
+    console.log(/[a-zA-Zhei]/.test(' he '));
+    console.log(/[a-zA-Zhei]/.test(' hei '));
+  </script>
+</head>
+<body>
+
+</body>
+</html>

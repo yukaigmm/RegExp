@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>边界</title>
+  <script>
+    // ^以。。。开头  $以。。。结尾
+    console.log('*****^必须以。。。开头.......');
+    console.log(/\d/.test('123'));
+    console.log(/^\d/.test('abc123'));
+    console.log(/^\d/.test('0abc123'));
+    console.log(/^\d/.test('0 '));
+    console.log(/^\d/.test(' 0 '));
+    console.log(/^\d/.test('% 0 '));
+    
+    console.log('********$以。。。结尾************');
+    console.log(/\d$/.test('abc123'));
+    console.log(/\d$/.test('0abc123'));
+    console.log(/\d$/.test('0 '));
+    console.log(/\d$/.test(' 0 '));
+    console.log(/\d$/.test('% 0 '));
+    console.log(/\d$/.test('% 0 6'));
+    console.log(/\d$/.test(' %& 6'));
+  </script>
+</head>
+<body>
+
+</body>
+</html>

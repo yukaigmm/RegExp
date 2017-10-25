@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>复习</title>
+  <script>
+    /**
+     * 1. 事件注册的另一种方式
+     *      on+事件类型     没有兼容性的问题，各浏览器都支持，但是对于同一事件源，只能注册一个相同的事件，如果后面又注册了相同的事件，会将前面的给覆盖掉
+     *      addEventListener/attachEvent
+     *        如果注册了多个相同的事件，会依次的触发
+     *      addEventListener(type,listener,false);
+     *      attachEvent('on'+type,listener);
+     *
+     *      on+事件类型 =  null;
+     *      removeEventListener(type,listener,false);
+     *      detachEvent('on'+type,listener);
+     *  2.  事件冒泡      嵌套的元素中    所有的元素都有事件
+     *          当一个元素上的事件被触发的时候，比如说单击了一个按钮，那么同样的事件，会在这个元素的所有的祖先级元素中，依次的被触发，这一过程叫做事件冒泡。事件冒泡从当前元素，一直冒到DOM树的最顶层
+     *  3.  事件捕获，刚好是和事件冒泡是相反的一个过程
+     *  4.  事件冒泡的好处就是可以实现 委托
+     *  5.  阻止事件冒泡：
+     *          e.stopPropagation();   扩散 传播    谷歌等高级浏览器支持的方式
+     *          e.cancelBubble = true;   IE8浏览器支持的方式
+     *  6.  事件中的其它参数
+     *        this           当前对象，正在执行事件处理程序的事件源
+     *        currentTarget: 与this的用法是一样的，当前对象，  正在执行事件处理程序的事件源
+     *        target:        最最原始的事件源头，因为有些元素的事件触发是通过冒泡来实现
+     *        srcElement:    target
+     *
+     *        事件的类型：  e.type
+     *        鼠标的按键：  e.which
+     *        事件的阶段：  1. 捕获    2.  目标阶段：正在执行事件处理程序的阶段   3. 冒泡
+     *
+     *         e.eventPhase;   获取当前元素的事件阶段
+     *        求两个数的运算结果    +   -   *   /   %
+     *
+     *        function getResult(a,b,sep){
+     *          if(sep=='+'){
+     *            return a+b;
+     *            }
+     *        }
+     *        function getResult(a,b,fn){
+//     *          if(sep=='+'){
+//     *            return a+b;
+//     *            }
+                 return  fn(a,b);
+     *        }
+     *
+     *        只定义一个函数，不真正的计算
+     *        当调用函数传参的时候，真正的计算，传一个回调函数(定义了计算的规则)
+     */
+  </script>
+</head>
+<body>
+
+</body>
+</html>

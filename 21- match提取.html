@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>提取</title>
+  <script>
+    ////5.1 提取工资
+//    var str = "张三：1000，李四：5000，王五：8000，赵六：9000。";
+    
+//    var arr = str.match(/\d{4}/g);
+//    console.log(arr);
+    
+    //5.2 提取email地址1
+     var str = "123123@xx.com,fangfang@valuedopinions.cn 286669312@qq.com 2、emailenglish@emailenglish.englishtown.com 286669312@qq.com...";
+    var arr = str.match(/\w+[@]\w+\.\w+(\.\w+)?/g);
+    console.log(arr);
+    
+    // match方法是属于字符串的方法，只不过参数是用到了正则表达式
+  </script>
+</head>
+<body>
+
+</body>
+</html>

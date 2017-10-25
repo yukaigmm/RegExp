@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>自定义类</title>
+  <script>
+    // 预定义类： 就是系统提供给我们的那些验证规则
+    // 自定义： 就是我们自己定义的验证规则    //
+    
+    var reg = /hei/;
+    // 自定义的验证规则，必须在一块，是连起来的 ，不能分割，只要包括一组即可,多也也不要紧
+    console.log(reg.test('heima'));
+    console.log(/hei/.test('hema'));
+    console.log(/hei/.test('hemia'));
+    console.log(/hei/.test('mahie'));
+    console.log(/hei/.test('mahei'));
+    console.log(/hei/.test('maheihei'));
+    console.log(/hei/.test('heihei'));
+    
+    console.log('********chuan*************');
+    console.log(/chuan/.test('chuang'));
+    console.log(/chuan/.test('gchuan'));
+    console.log(/chuan/.test('gchuanchuang'));
+    console.log(/chuan/.test('aachuan'));
+  </script>
+</head>
+<body>
+
+</body>
+</html>

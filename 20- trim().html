@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>trim()</title>
+  <script>
+    // trim()
+    var str = "  abc  ";
+    console.log("*******"+trim(str)+"*********");
+    
+    function trim(str){
+//      str = str.replace(/^\s|\s$/,'');
+//      return str;
+      return str.replace(/^\s+|\s+$/g,'');
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>

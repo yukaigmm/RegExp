@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>或的用法</title>
+  <script>
+      //  或在正则表达式中是用一个   |
+    console.log(/h|mai/.test('h'));
+    console.log(/h|mai/.test('hai'));
+    console.log(/h|mai/.test('mai'));
+    console.log(/h|mai/.test('ai'));
+    console.log(/h|mai/.test('hm'));
+    console.log(/h|mai/.test('m'));
+    
+    console.log('*******ha|mai*********');
+    // |  或的意思是两边的任意一组
+    console.log(/ha|mai/.test('a'));
+    console.log(/ha|mai/.test('ma'));
+    console.log(/ha|mai/.test('ha'));
+    console.log(/ha|mai/.test('mai'));
+    console.log(/ha|mai/.test('hai'));
+    console.log(/ha|mai/.test('hm'));
+    console.log(/ha|mai/.test('aai'));
+    console.log(/ha|mai/.test('halky'));
+
+
+    console.log('*********(haai|hmai)表示优先级************');
+      console.log(/h(a|m)ai/.test('a'));
+      console.log(/h(a|m)ai/.test('ma'));
+      console.log(/h(a|m)ai/.test('ha'));
+      console.log(/h(a|m)ai/.test('mai'));
+      console.log(/h(a|m)ai/.test('hai'));
+      console.log(/h(a|m)ai/.test('hm'));
+      console.log(/h(a|m)ai/.test('aai'));
+      console.log(/h(a|m)ai/.test('halky'));
+      console.log(/h(a|m)ai/.test('haai'));
+      console.log(/h(a|m)ai/.test('hmai'));
+      console.log(/h(a|m)ai/.test('hmaihmai'));
+      console.log(/h(a|m)ai/.test('hmaihaai'));
+  </script>
+</head>
+<body>
+
+</body>
+</html>
